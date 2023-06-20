@@ -24,10 +24,11 @@ fn main() {
     // check n = p * q
     assert_eq!(p.clone().checked_mul(&q).unwrap(), n);
     println!("(pass) n = p * q");
-
+    
     // check d * e = 1 mod (p - 1) * (q - 1)
     assert_eq!(d.clone().checked_mul(&e).unwrap() % phi_n, BigUint::from(1_u8));
     println!("(pass) d * e = 1 mod (p - 1) * (q - 1)\n");
+    println!("private key: d = {}", d);
 
     // Sign student ID by d directly
     println!("\n====================================\n   Sign student ID by d directly   \n====================================\n");
